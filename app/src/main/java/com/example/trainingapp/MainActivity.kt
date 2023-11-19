@@ -2,7 +2,6 @@ package com.example.trainingapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box

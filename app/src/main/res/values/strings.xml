@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">TrainingApp</string>
     <string name="title_activity_information_collection">InformationCollection</string>
+    <string name="man">Man</string>
+    <string name="woman">Woman</string>
 </resources>
