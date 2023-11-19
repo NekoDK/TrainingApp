@@ -1,6 +1,8 @@
 package com.example.trainingapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
@@ -27,39 +29,38 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TwoButtons()
+                    Box(
+                        contentAlignment = Alignment.Center
+                    ){
+                        Button(
+                            onClick = { /* Действие для кнопки по центру */ },
+                            modifier = Modifier.padding(8.dp)
+
+                        ) {
+                            Text("Регистрация")
+                        }
+                    }
+                    Box(
+                        contentAlignment = Alignment.BottomEnd
+                    ){
+                        Button(
+                            onClick = {
+                                openScreen() },
+                            modifier = Modifier.padding(8.dp)
+
+                        ) {
+                            Text("Пропустить")
+                        }
+                    }
                 }
             }
         }
     }
-}
 
-
-@Composable
-fun TwoButtons() {
-    Box(
-        contentAlignment = Alignment.Center
-    ){
-        Button(
-            onClick = { /* Действие для кнопки по центру */ },
-            modifier = Modifier.padding(8.dp)
-
-        ) {
-            Text("Регистрация")
-        }
+    fun openScreen(){
+        val newIntent = Intent(this,InformationCollection::class.java)
+        startActivity(newIntent)
     }
-    Box(
-        contentAlignment = Alignment.BottomEnd
-    ){
-        Button(
-            onClick = { /* Действие для кнопки по центру */ },
-            modifier = Modifier.padding(8.dp)
-
-        ) {
-            Text("Пропустить")
-        }
-    }
-
 
 }
 
@@ -67,7 +68,5 @@ fun TwoButtons() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    TrainingAppTheme {
-        TwoButtons()
-    }
+    MainActivity()
 }
